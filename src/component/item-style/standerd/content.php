@@ -1,0 +1,80 @@
+<?php
+/**
+ * Item content template.
+ *
+ * @package @@plugin_name
+ */
+
+if (!defined('ABSPATH')) {
+    exit;
+}
+?>
+<div class="up-portfolio-layout layout-standerd">
+    <?php if (
+        ($displayCaption && $source['title'] && strlen($source['title']) > 0) ||
+        ($displayDescription && $source['description'] && strlen($source['description']) > 0) ||
+        ($displayCategory && strlen($filterString) > 0)
+    ) { ?>
+        <div class="up-overlay">
+            <div class="up-overlay-content">
+                <div class="up-overlay-content-meta">
+                    <?php if ($displayCategory && strlen($filterString) > 0) { ?>
+                        <span class="item-category">
+                            <?php echo esc_html($filterString); ?>
+                        </span>
+                    <?php } ?>
+                    <?php if ($displayType === "posts") { ?>
+                        <div
+                            class="up-portfolio-taxonomy <?php echo esc_attr($horizontalAlign); ?> <?php echo esc_attr($verticalAlign); ?>">
+
+                            <div class="up-post-date">
+                                <?php echo $svgsname['Svgcalendar']; ?>
+                                <span>
+                                    <?php echo esc_attr($date); ?>
+                                </span>
+                            </div>
+                            <div>
+                                <?php echo $svgsname['Svgtime']; ?>
+                                <span>
+                                    <?php echo esc_html($readingTimeMinutes); ?> Mins
+                                </span>
+                            </div>
+
+                        </div>
+                    <?php } ?>
+                    <?php if ($displayCaption && $source['title'] && strlen($source['title']) > 0) { ?>
+                        <h2 class="up-overlay-content-meta-title <?php echo $horizontalAlign ?> <?php echo $verticalAlign ?>">
+                            <a href="<?php echo esc_url($permalink); ?>">
+                                <?php echo esc_html($title); ?>
+                            </a>
+                        </h2>
+                    <?php } ?>
+
+                    <?php if ($displayDescription && $source['description'] && strlen($source['description']) > 0) { ?>
+                        <div class="up-description">
+                            <?php echo esc_html($description); ?>
+                        </div>
+                    <?php } ?>
+                    <?php if ($displayType === "posts") { ?>
+                        <div class="up-post-footer">
+                            <div>
+                                <span>
+                                    - By
+                                    <?php echo esc_html($author); ?>
+                                </span>
+                            </div>
+
+                            <div>
+                                <?php echo $svgsname['SvgComment']; ?>
+                                <span>
+                                    <?php echo esc_html($comment); ?>
+                                </span>
+                            </div>
+                        </div>
+                    <?php } ?>
+                </div>
+            </div>
+
+        </div>
+    <?php } ?>
+</div>

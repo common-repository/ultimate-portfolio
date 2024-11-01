@@ -1,0 +1,17 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "ultimate-portfolio/ultimate-portfolio",
+  "version": "0.1.0",
+  "title": "Ultimate Portfolio",
+  "category": "widgets",
+  "icon": "block",
+  "description": "Create and customize dynamic gallery and post portfolios for your WordPress website. With Ultimate Portfolio, you have the flexibility to design captivating galleries, project showcases, and more using the Gutenberg editor.",
+  "supports": {
+    "html": false
+  },
+  "textdomain": "ultimate-portfolio",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css"
+}

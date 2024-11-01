@@ -1,0 +1,60 @@
+.up-btn-upgrade {
+    color: white !important;
+}
+
+
+.dashicons-ultimate-portfolio {
+    background-image: url(../src/assets/images/ultimate-portfolio-logo-mini.webp);
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: 18px;
+}
+.up-btn-upgrade {
+    position: relative;
+    overflow: hidden; /* Ensures the pseudo-element doesn't exceed the button boundaries */
+}
+
+.up-btn-upgrade::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    bottom: -50%;
+    left: -50%;
+    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.6), transparent);
+    transform: rotate(0deg) translateX(-100%);
+    transition: transform 1.5s ease;
+    pointer-events: none; /* Prevents mouse events on the pseudo-element */
+}
+
+.up-btn-upgrade:hover::after {
+    transform: rotate(20deg) translateX(300%);
+}
+
+.up-more-plugin-img {
+    width: 80px !important;
+    background: cornflowerblue;
+    border-radius: 50%;
+    padding: 13px;
+    height: 80px !important;
+}
+
+
+.post-type-ultimate_portfolio #wpcontent {
+    position: relative;
+}
+
+.post-type-ultimate_portfolio .up-admin-footer {
+    width: calc(100% - 20px);
+    position: absolute;
+    bottom: 0;
+    z-index: 2;
+}
+
+input:checked ~ .uptw-dot {
+    transform: translateX(100%);
+}
+input:checked ~ .uptw-peer-checked {
+   
+    background-color: rgb(59 130 246 / var(--tw-bg-opacity))
+}
